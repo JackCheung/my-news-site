@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>新闻列表</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .news-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .news-date { color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>最新新闻</h1>
+    {% for news in news_list %}
+    <div class="news-item">
+        <h2><a href="posts/{{ news.url_name }}.html">{{ news.title }}</a></h2>
+        <div class="news-date">{{ news.date }}</div>
+    </div>
+    {% endfor %}
+</body>
+</html>
