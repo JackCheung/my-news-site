@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ news.title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .back-link { display: block; margin-bottom: 20px; }
+        .news-date { color: #666; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">← 返回首页</a>
+    <h1>{{ news.title }}</h1>
+    <div class="news-date">发布日期: {{ news.date }}</div>
+    <div class="news-content">{{ news.content | safe }}</div>
+</body>
+</html>
