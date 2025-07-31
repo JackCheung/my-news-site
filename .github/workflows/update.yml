@@ -10,6 +10,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        # 需要获取所有分支历史
+        fetch-depth: 0  
       
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -30,5 +33,8 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
         publish_dir: ./
+        # 确保使用正确的用户信息
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
